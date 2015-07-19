@@ -1,0 +1,36 @@
+{
+  "name": "addscript",
+  "version": "0.0.1",
+  "description": "minimalistic browser script loader",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "npm test",
+    "build": "$(npm bin)/gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cainrus/addscript.git"
+  },
+  "keywords": [
+    "script"
+  ],
+  "author": "cainrus",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cainrus/addscript/issues"
+  },
+  "homepage": "https://github.com/cainrus/addscript#readme",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^1.2.0",
+    "gulp-umd": "^0.2.0",
+    "tape": "^4.0.0"
+  },
+  "testling": {
+    "files": "test/addscript.test.js",
+    "browsers": [
+      "android-browser/latest"
+    ]
+  }
+}
