@@ -24,13 +24,13 @@
     "gulp": "^3.9.0",
     "gulp-rename": "^1.2.2",
     "gulp-uglify": "^1.2.0",
-    "gulp-umd": "^0.2.0",
-    "tape": "^4.0.0"
+    "gulp-umd": "^0.2.0"
   },
   "testling": {
     "files": "test/addscript.test.js",
     "browsers": [
       "android-browser/latest"
     ]
-  }
+  },
+  "dependencies": {}
 }
