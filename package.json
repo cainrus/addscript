@@ -33,7 +33,10 @@
     "karma-sauce-launcher": "^0.2.14",
     "phantomjs": "^1.9.17",
     "qunit": "^0.7.6",
-    "qunitjs": "^1.18.0"
+    "qunitjs": "^1.18.0",
+    "gulp-uglify": "^1.2.0",
+    "karma-coverage": "^0.4.2",
+    "karma-coveralls": "^1.1.2"
   },
   "testling": {
     "files": "test/addscript.test.js",
@@ -42,9 +45,5 @@
     ]
   },
   "dependencies": {
-    "coveralls": "^2.11.3",
-    "gulp-uglify": "^1.2.0",
-    "karma-coverage": "^0.4.2",
-    "karma-coveralls": "^1.1.2"
   }
 }
