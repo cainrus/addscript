@@ -38,12 +38,6 @@
     "karma-coverage": "^0.4.2",
     "karma-coveralls": "^1.1.2"
   },
-  "testling": {
-    "files": "test/addscript.test.js",
-    "browsers": [
-      "android-browser/latest"
-    ]
-  },
   "dependencies": {
   }
 }
