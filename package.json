@@ -5,8 +5,7 @@
   "main": "dist/addScript.js",
   "scripts": {
     "build": "$(npm bin)/gulp",
-    "test": "$(npm bin)/karma start karma.conf.js",
-    "coveralls": "cat ./coverage/lcov.info | $(npm bin)/coveralls"
+    "test": "$(npm bin)/karma start karma.conf.js"
   },
   "repository": {
     "type": "git",
@@ -28,16 +27,14 @@
     "gulp-umd": "^0.2.0",
     "karma": "^0.13.3",
     "karma-coveralls": "^1.1.2",
-    "karma-phantomjs-launcher": "^0.2.0",
     "karma-qunit": "^0.1.5",
     "karma-sauce-launcher": "^0.2.14",
-    "phantomjs": "^1.9.17",
     "qunit": "^0.7.6",
     "qunitjs": "^1.18.0",
-    "gulp-uglify": "^1.2.0",
-    "karma-coverage": "^0.4.2",
-    "karma-coveralls": "^1.1.2"
+    "karma-coverage": "^0.4.2"
   },
   "dependencies": {
+    "get-saucelabs-browsers": "^1.0.1",
+    "karma-coveralls": "^1.1.2"
   }
 }
