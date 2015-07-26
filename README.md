@@ -3,6 +3,9 @@
 [![Build status][travis-image]][travis-url]
 [![Coverage status][coveralls-image]][coveralls-url]
 
+[![Sauce Test Status](https://saucelabs.com/browser-matrix/cainrus.svg)](https://saucelabs.com/u/cainrus)
+
+
 
 Minimalistic umd compatible cross-browser script loader.
 
