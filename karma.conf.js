@@ -1,49 +1,23 @@
 module.exports = function (config) {
 
-    config.set({
-        basePath: '',
-        frameworks: ['qunit'],
-
-        plugins: [
-            'karma-coverage',
-            'karma-coveralls',
-            'karma-qunit',
-            'karma-sauce-launcher'
-        ],
-
-        files: [
-            'src/*.js',
-            'dist/*.js',
-            'test/test.js'
-        ],
-
-        preprocessors: {'src/*.js': ['coverage']},
-
-        port: 9876,
-        colors: true,
-
-
-        sauceLabs: {
+    if (process.env.SAUCE_ACCESS_KEY && process.env.SAUCE_USERNAME) {
+        karmaOpts.plugins.push('karma-sauce-launcher');
+        karmaOpts.customLaunchers = customLaunchers;
+        karmaOpts.browsers = Object.keys(customLaunchers);
+        karmaOpts.sauceLabs = {
             testName: 'addscript'
-        },
-        customLaunchers: customLaunchers,
-        browsers: Object.keys(customLaunchers),
+        };
+        karmaOpts.reporters.push('saucelabs');
 
-        singleRun: true,
-        autoWatch: true,
-        reporters: ['progress', 'saucelabs', 'coverage'],
-        // optionally, configure the reporter
-        coverageReporter: {
-            type: 'lcovonly',
-            dir: process.cwd() + '/coverage/',
-            subdir: '.'
-        },
-
-        phantomjsLauncher: {
+    } else {
+        karmaOpts.plugins.push('karma-phantomjs-launcher');
+        karmaOpts.phantomjsLauncher = {
             exitOnResourceError: true
-        }
+        };
+        karmaOpts.browsers = ['PhantomJS']
+    }
 
-    });
+    config.set(karmaOpts);
 };
 
 var customLaunchers = [
@@ -127,3 +101,39 @@ var customLaunchers = [
     {browserName: 'android', version: '5.0', platform: 'Linux', base: 'SauceLabs'},
     {browserName: 'android', version: '5.1', platform: 'Linux', base: 'SauceLabs'}
 ];
+
+var karmaOpts = {
+    basePath: '',
+    frameworks: ['qunit'],
+
+    plugins: [
+        'karma-coverage',
+        'karma-coveralls',
+        'karma-qunit',
+    ],
+
+    files: [
+        'src/*.js',
+        'dist/*.js',
+        'test/test.js'
+    ],
+
+    preprocessors: {'src/*.js': ['coverage']},
+
+    port: 9876,
+    colors: true,
+
+    sauceLabs: {
+        testName: 'addscript'
+    },
+
+    singleRun: true,
+    autoWatch: true,
+    reporters: ['progress', 'coverage'],
+    // optionally, configure the reporter
+    coverageReporter: {
+        type: 'lcovonly',
+        dir: process.cwd() + '/coverage/',
+        subdir: '.'
+    }
+};
