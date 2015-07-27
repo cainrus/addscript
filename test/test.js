@@ -19,7 +19,6 @@ test("addScript clean up", function (assert) {
     var head = document.getElementsByTagName('head')[0];
 
     addScript("data:text/javascript;", function () {
-        console.log(script)
         assert.notOk(script.parentNode, 'Script is removed from dom after execution');
         done();
     });
